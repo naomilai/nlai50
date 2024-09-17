@@ -33,5 +33,19 @@ krewes = {
                 ]
          }
 
+d
 def random_devo(krewes):
-    rand_key = random.randrange(0, len(krewes))
+    # rand_key -> random key index
+    # keys_list -> list of keys
+    # keys -> random key
+    # values -> value of random key (list in our case)
+#     rand_key = random.randrange(0, len(krewes))
+#     keys_list = krewes.keys()
+#     keys = keys_list[rand_key]
+#     # keys() -> returns keys of dictionary (as list)
+#     values = (keys)
+#     print(values)
+
+   
+   
+random_devo(krewes
