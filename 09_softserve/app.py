@@ -35,13 +35,22 @@ def choose_random(csvfile):
 
 # keep function definitions above @app.route("/")
 
+def heading():
+    h = "<h1> team name </h1>"
+    occupations = read_csv('occupations.csv')
+    s = h+ "<br>"
+    for key in occupations:
+        s += key
+    return s
+
 app = Flask(__name__)
 @app.route("/")
 
 def occupation_chooser():
+    s = heading()
     st = choose_random('occupations.csv')
     return st
 
 # to do-- display list of occupations, display TPNG+roster(???)
 
-app.run()
+app.run(port=5001)
