@@ -5,6 +5,12 @@
 # 2024-09-xx
 # time spent: xx
 
+'''
+DISCO:
+access value in key: dict[key] -> values
+
+'''
+
 import csv
 import random
 from flask import Flask
@@ -36,19 +42,24 @@ def choose_random(csvfile):
 # keep function definitions above @app.route("/")
 
 def heading():
-    h = "<h1> team name </h1>"
-    occupations = read_csv('occupations.csv')
-    s = h+ "<br>"
-    for key in occupations:
-        s += key
-    return s
+    return "<h4> team name: Naomi, Tanzeem, Leon</h4>"
+
+def occ_list():
+    occ_dict = read_csv('occupations.csv')
+    st = '<br>'
+    for key in occ_dict:
+        st = st + '<br>' + occ_dict[key]
+        #print(occ_dict[key])
+    return st
 
 app = Flask(__name__)
 @app.route("/")
 
 def occupation_chooser():
-    s = heading()
-    st = choose_random('occupations.csv')
+    st = ''
+    st += heading()
+    st = st + "random occupation: " + choose_random('occupations.csv') 
+    st += occ_list()
     return st
 
 # to do-- display list of occupations, display TPNG+roster(???)
