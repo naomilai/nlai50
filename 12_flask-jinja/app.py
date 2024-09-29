@@ -5,16 +5,30 @@
 """
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Q0:
-Nothing happens-- the page looks the same 
+This will cause an error because render_template is not defined in the test_implt() function since it is not imported.
+We expected that the program wouldn't even run. However, it only presented an error when we tried to load /my_foist_template.
 
 Q1:
-http://127.0.0.1:5000/my_foist_template
-
-
+http://localhost:5000/my_foist_template
 
 Q2:
-<your response here>
+The first argument is the path to the template (the html file) to be rendered.
+The second argument passes "fooooo" into the foo variable in the template file.
+The third argument passes the coll array into the collections variable in the template file.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Observed:
+When render_template is removed from input, localhost:5000/my_foist_template displays a NameError and a long
+erorr message is printed in terminal. But, the server is still hosted and the root page loads fine.
+
+When localhost:5000/my_foist_template is loaded, the title is foooo, and 0 1 1 2 3 5 8 is displayed on
+different lines. It seems to us that our prediction in Q3 is correct. "foooo" is assigned the foo variable
+in the html template file and passed through the render_template function in app.py, and the collections variable
+is assigned the coll array in app.py.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+QCC:
+1. Can all variables be passed through render_template?
+2. Does flask read through the template file and extract all variables from the Jinja code to ensure your arguments are valid?
+3. Why can't we initialize these variables in the Jinja code itself? Why do we have to pass these as parameters?
 """
 
 
