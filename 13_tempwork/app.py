@@ -26,6 +26,9 @@ def randocc():
 # print(randocc())
 
 @app.route("/")
+def hello():
+    return  "<a href=\"http://127.0.0.1:5000/wdywtbwygp\">random occupations generator</a>"
+
 
 @app.route("/wdywtbwygp")
 def test_tmplt():
