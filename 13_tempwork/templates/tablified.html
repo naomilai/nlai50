@@ -6,17 +6,38 @@
  -->
 
 <html>
+    <!-- style -->
+    <style>
+        table, th, td {
+        border:1px solid black;
+        }
+    </style>
+    
+    <!-- head -->
+    <head>
+        <title> {{ foo }} </title>
+    </head>
+    
+    <!-- body -->
+    <body>
+        <h2> Table of Occupations and a Random Suggestion </h2>
+        <p> peaches & mangoes: Anastasia Lee, Nia Lam, and Naomi Lai </p>
+        
+        <h3> Random Occupation: </h3>
+        <h3> Table: </h3>
+        <table>
+          {% for dictionary in dictionary %}
+          <tr>
+            {% for key, values in dictionary.items() %}
+                <!-- <tr> -->
+                    <!-- <td> {{ key }} </td> -->
+                    <td> {{ values }} </td>
+                <!-- </tr> -->
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </table>
 
-  <head>
-    <title> {{ foo }} </title>
-  </head>
-
-  <body>
-    {% for key, values in dictionary.items() %}
-        {{ key }} <div align="center"> {{ values }} </div>
-     <br>
-    {% endfor %}
-  </body>
+    </body>
 
 </html>
-

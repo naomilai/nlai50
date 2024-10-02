@@ -1,24 +1,24 @@
-Job Class,Percentage
-Management,6.1
-Business and Financial operations,5
-Computer and Mathematical,2.7
-Architecture and Engineering,1.7
-"Life, Physical and Social Science",0.9
-Community and Social Service,1.6
-Legal,0.8
-"Education, training and library",6.1
-"Arts, design, entertainment, sports and media",1.7
-Healthcare practioners and technical,5.5
-Healthcare support,2.8
-Protective service,2.3
-Food preparation and serving,8.3
-Building and grounds cleaning and maintenance,3.7
-Personal care and service,4
-Sales,10.2
-Office and administrative support,15.1
-"Farming, fishing and forestry",0.6
-Construction and extraction,4.3
-"Installation, maintenance and repair",3.8
-Production,6.1
-Transportation and material moving,6.5
-Total,99.8
+Job Class,Percentage,Link
+Management,6.1,https://www.indeed.com/career-advice/finding-a-job/getting-into-management 
+Business and Financial operations,5,https://aafa.com/blog/how-to-begin-a-career-in-finance 
+Computer and Mathematical,2.7,https://www.indeed.com/career-advice/career-development/how-to-learn-about-computer-science 
+Architecture and Engineering,1.7,https://learn.org/articles/Architectural_Engineering_How_to_Become_an_Architectural_Engineer_in_5_Steps.html 
+"Life, Physical and Social Science",0.9,https://www.raise.me/careers/life-physical-and-social-science/ 
+Community and Social Service,1.6,https://www.stjohns.edu/news-media/johnnies-blog/7-actionable-steps-build-social-service-career 
+Legal,0.8,https://www.usnews.com/education/best-graduate-schools/top-law-schools/articles/how-to-become-a-lawyer-a-step-by-step-guide 
+"Education, training and library",6.1,https://www.ala.org/educationcareers/libcareers/become 
+"Arts, design, entertainment, sports and media",1.7,https://www.tucareers.com/jobfamily/arts-design-entertainment-sports-and-media 
+Healthcare practioners and technical,5.5,https://www.indeed.com/career-advice/finding-a-job/how-to-become-a-healthcare-practitioner 
+Healthcare support,2.8,https://calregional.com/how-to-get-started-in-the-healthcare-field/ 
+Protective service,2.3,https://lapsen.org/security-protective-services/ 
+Food preparation and serving,8.3,https://www.bls.gov/ooh/food-preparation-and-serving/food-preparation-workers.htm 
+Building and grounds cleaning and maintenance,3.7,https://www.nyserda.ny.gov/All-Programs/Clean-Energy-Workforce-Development-and-Training/Energize-Your-Future/Careers-in-Weatherization/Building-Maintenance-Worker 
+Personal care and service,4,https://thebestschools.org/careers/career-guide/personal-care-careers/ 
+Sales,10.2,https://blog.hubspot.com/sales/sales-career 
+Office and administrative support,15.1,https://www.pennfoster.edu/blog/how-to-become-an-administrative-assistant-career-guide 
+"Farming, fishing and forestry",0.6,https://www.careerforcemn.com/industry/natural-resources 
+Construction and extraction,4.3,https://www.indeed.com/career-advice/construction-extraction 
+"Installation, maintenance and repair",3.8,https://www.zippia.com/installation-maintenance-technician-jobs/ 
+Production,6.1,https://www.backstage.com/magazine/article/crew-101-first-production-job-70414/ 
+Transportation and material moving,6.5,https://www.indeed.com/career-advice/finding-a-job/careers-in-transportation 
+Total,99.8,
