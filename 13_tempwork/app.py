@@ -43,13 +43,13 @@ def randocc():
 
 @app.route("/")
 
-# def hello_world():
-#     txt = "Team 54<br>Anastasia, Mark, Brian<br>"
-#     txt += "<h2> A random occupation is chosen: " + randocc() + "</h2><br><br>"
-#     txt += "<h3>Here is the list of occupations and their percentages:</h3><br>"
-#     for key, values in d.items():
-#         txt += key + '<div align="center">' + str(values) + "</div> <br>"
-#     return txt
+def hello_world():
+    # txt = "Team 54<br>Anastasia, Mark, Brian<br>"
+    # txt += "<h2> A random occupation is chosen: " + randocc() + "</h2><br><br>"
+    # txt += "<h3>Here is the list of occupations and their percentages:</h3><br>"
+    # for key, values in d.items():
+    #     txt += key + '<div align="center">' + str(values) + "</div> <br>"
+    return  "<a href=\"http://127.0.0.1:5000/wdywtbwygp\">random occupations generator</a>"
 
 @app.route("/wdywtbwygp")
 def test_tmplt():
