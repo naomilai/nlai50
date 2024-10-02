@@ -1,0 +1,91 @@
+DISCO
+Tables:
+- <table> to create a table environment
+- <th> for table heading
+- <tr> for rows (table row) 
+- <td> for columns (table data)
+Example:
+<table>
+  <tr>
+    <th> header1 </th>
+    <th> header2 </th>
+    <th> header3 </th>
+  </tr>
+  <tr>
+    <td> row 1 column 1 </td>
+    <td> row 1 column 2 </td>
+    <td> row 1 column 3 </td>
+  </tr>
+  <tr>
+    <td> row 2 column 1 </td>
+    <td> row 2 column 2 </td>
+    <td> row 2 column 3 </td>
+  </tr>
+</table>
+
+- how to create a hyperlink: <a href = "url">link text</a>
+- <!-- this is how you comment in html -->
+- <p> means paragraph
+- lists in python can have multiple types (e.g. float and string)
+- in VSCode, you can use Ctrl + / to comment out lines in any language!
+
+QCC:
+- is there a better way to associate multiple values with a key than a dictionary with lists as values?
+- can you make tables in matplotlib, and would that be easier?
+
+Ego
+Types of people
+Detached: do alone, think creatively
+Aggressive: prestige and money
+Compliant: work with people and be helpful
+People usually don’t focus on the social aspect of programming
+Cognitive dissonance: being aware of when reality doesn’t match your perception of it leads to [issues?]
+Can lead to avoiding, dismissing, and ignoring errors
+Restructuring environments around egoless programming
+Egoless programming is good because:
+Reduced error
+Reduced variation in debugging
+Improved adaptability
+Encourages clarity
+Myth: the best programming is a result of one’s own genius
+How to detach from your work
+“Code you wrote” vs “your code”
+
+it's bad to treat your code as an extension of yourself because then you don't look for errors and instead ignore them
+the ability to acknowledge your limitations makes you a better programmer
+referring to work as "code you wrote" instead of "your code" can help you detach yourself from it
+people usually don't focus on the social aspect of programming
+egoless programming is a good practice not only because it reduces the number of errors, but also because it encourages people to write code that is clear and understandable
+sharing your code with people reduces variation and increases adaptability
+Programming is typically treated as individual task → detached: “be left to myself to be creative”
+Programmers attached to their program → ego → taking critiques personally
+Ego leads to emulation
+Objectivity of programming blinds programmers
+Cognitive dissonance, different opinion viewed as insecurity/hypocrisy rather than accepting argument to have some truth
+Avoiding information that could cause cognitive dissonance; human tendency to avoid, ignore, and dismiss errors
+Eliminating defense
+Restructure of social environment is necessary – otherwise, why is this proven benefit not being implemented?
+Acknowledgement of human limitations!
+Avoiding possessive nouns (terminology!) with *the code you wrote* – not *your code*
+Myth that best programming is the product of (individual) genius
+Even when faced and told that it was due to group effort, others and those in charge may choose not to believe it, favoring to give all credit to a “leader,” or even condemning the idea of a group effort altogether
+Different results when given different impressions of what they wanted to achieve – making program clear and understandable to those who have to read it :O
+Social programming → reduced errors, reduced variation in debugging, improved adaptability
+Create an environment favorable for maintaining the situation – social programming
+Simple signature, prevent bad habit – regardless of experience.
+
+
+people are persuaded/dissuaded from programming based on "independent work" archetype
+compliant (work w others), aggressive (money/prestige), detached (creatives)
+
+Why egoless programming?
+what is the difference between owning art and owning code (property oriented programming)
+programmers only have a machine to verify their work
+Cognitive dissonance (?)
+Programmers who see code as an extension of themselves ("ego") will not try to find the errors, rather, he will try to convince others.himself it is correct (at the expense of errors)
+don’t let errors in code wound your pride advantages: efficacy, lack in variation (teams missing people), create active contributions
+
+How can we create environments?
+clash between aggressive management and compliant-detached programmers (managers attribute success to a single person, egoless-programming environment would attribute success to the team)
+they believe work gets done because of a leader
+

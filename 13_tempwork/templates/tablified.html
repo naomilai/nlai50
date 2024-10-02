@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-  Clyde 'Thluffy' Sinclair
+  peaches & mangoes: Anastasia Lee, Nia Lam, Naomi Lai
   SoftDev
   Oct 2022
  -->
@@ -23,19 +23,16 @@
         <h2> Table of Occupations and a Random Suggestion </h2>
         <p> peaches & mangoes: Anastasia Lee, Nia Lam, and Naomi Lai </p>
         
-        <h3> Random Occupation: </h3> {{ rand }}
+        <h3> Random Occupation: {{ rand }} </h3>
         <h3> Table: </h3>
         <table>
-          {% for dictionary in dictionary %}
-          <tr>
-            {% for key, values in dictionary.items() %}
-                <!-- <tr> -->
-                    <!-- <td> {{ key }} </td> -->
-                    <td> {{ values }} </td>
-                <!-- </tr> -->
-            {% endfor %}
-          </tr>
-          {% endfor %}
+        {% for key, values in dictionary.items() %}
+            <tr>
+                <td> {{ key }} </td>
+                <td> {{ values[0] }} </td>
+                <td> <a href = {{values[1]}}>{{values[1]}}</a> </td>
+            </tr>
+        {% endfor %}
         </table>
 
     </body>
