@@ -11,7 +11,7 @@ d = {}
 def randocc():
     percentages = []
     with open("data/occupations.csv", "r") as file:
-        arr = list(csv.reader(file))[1:-2] #omit first and last lines
+        arr = list(csv.reader(file))[1:-1] #omit first and last lines
         #print(arr)
     for i in arr:
         d.update({i[0]:[float(i[1]), i[2]]})
