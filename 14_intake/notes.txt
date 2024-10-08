@@ -1,0 +1,33 @@
+peaches & mangoes: Anastasia Lee, Nia Lam, Naomi Lai
+SoftDev
+Oct 2024
+
+PREDICTIONS:
+* If you go to the webpage, a login page will appear where you can enter a username and press submit
+* Once you press submit, the web server will route you to the http://127.0.0.1:5000/auth page, triggering the authenticate() method
+* As a result, the web server will display "Waaaa hooo HAAAH"
+-----------------------------------------------------------------------
+
+DISCO:
+* When you run app.py, print statement from testmod0.py appears in the terminal and the webpage displays “Howdy, friends!” along with an input box and submission button.
+* After you enter a username in the input box, terminal displays auth?username=<username>&sub1=Submit between “GET / and HTTP/1.1" 200 -
+* After you submit a username, the web server goes to http://127.0.0.1:5000/auth?username=<username>&sub1=Submit 
+* disp_loginpage() will produce a BadRequestKeyError when print(request.args[‘username’] is run– does it need information after submitting the query? 
+* In the terminal, information is displayed about the object (Flask obj, request obj, request.args, request.args[‘username’], request.headers)
+* There is only an error when disp_loginpage() requests the username, not when authenticate() requests, perhaps because there is an input for username
+* request.args['username'] in authenticate() is the username that was submitted
+* 
+-----------------------------------------------------------------------
+
+Q/C/C:
+* What are the methods (methods=[‘GET’, ‘POST’])? There are syntax errors when this part is uncommented
+* What does type mean when creating a form in HTML?
+* What exactly is the ImmutableMultiDict when request.args is printed?
+-----------------------------------------------------------------------
+
+OTHER?
+* 
+* 
+* 
+-----------------------------------------------------------------------
+
