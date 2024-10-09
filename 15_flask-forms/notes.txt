@@ -1,0 +1,26 @@
+Naomi, Kishi, ?
+Hungry
+Oct 2024
+
+DISCO:
+* GET shows information in the URL, including the key name and their values
+* POST does not and if you try to refresh the page, there is a 'Confirm Form Resubmission' popup
+* In the form, the same variables can be used (username/sub1)
+* request.args[...] must be used for GET
+* request.form[...] must be used for POST
+* Both are stored in ImmutableMultiDict
+* The last print and printing the request obj shows the method type (GET vs POST)
+-----------------------------------------------------------------------
+
+Q/C/C:
+* 
+*
+*
+-----------------------------------------------------------------------
+
+OTHER?
+* 
+* 
+* 
+-----------------------------------------------------------------------
+
