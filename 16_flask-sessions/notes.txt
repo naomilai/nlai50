@@ -1,0 +1,34 @@
+peaches & mangoes: Anastasia Lee, Nia Lam, Naomi Lai
+SoftDev
+Oct 2024
+
+PLAN:
+1. Open a private session with random key using app.secret_key = os.random(32)
+2. On the home page, check the session to see if the user is logged in
+  - if yes, display the response page which includes their username; this will allow the user to stay logged in
+  - if attempted but wrong password, display the login page with an additional line indicating that the password was incorrect
+  - if no, display the normal login page
+3. On the login page, display a form that takes in username and password
+  - add this data to the session
+  - redirect to home page
+4. On the response page, include a button to log out
+  - if clicked, remove username and password from session and display logout page
+5. On the logout page, include a button to log in again
+  - if clicked, display home page (which should display the login page because the session is empty)
+
+NOTES:
+* password is hard-coded for now
+* request method used: POST
+
+* a Flask session object securely signs the cookies
+* generate private key: app.secret_key = os.random(32)
+* NEVER store a private key in a publicly-viewable location!
+* add data to session: session[KEY] = value
+* remove data from session: session.pop(KEY, None) (returns None if KEY is not in session)
+* in html files, don't include {{...}} for variables inside of {%...%} code (causes a TemplateSyntaxError)
+
+QCC:
+* why doesn't request.cookies.get(KEY) work?
+* how can the user look at the contents of the cookies?
+* how can the user change the contents of the cookies (provided they know the secret key)?
+* what would happen if two users coincidentally had the same secret key?
