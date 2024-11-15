@@ -1,0 +1,29 @@
+.container-fluid{
+    padding: 0px 5%;
+}
+
+.col {
+    /* background-color:; */
+    border: 1px solid grey;
+    padding: 10px 0;
+}
+
+.section{
+    /* background-color: red; */
+    display: flex;
+    margin: 10px 0px 25px 0px;
+}
+
+.sub{
+    flex: 50%;
+    margin: 0px 10px;
+}
+
+header{
+    background-color:whitesmoke;
+    padding: 20px;
+}
+
+p{
+    padding: 0px 10px;
+}
