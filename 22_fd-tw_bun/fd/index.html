@@ -1,0 +1,82 @@
+<!doctype html>
+<!--
+Bun: Naomi Lai, Ryan
+SoftDev
+K22
+2024-11-13
+-->
+
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Baking for SoftDev </title>
+    <!--Imports the CSS Stylesheet-->
+    <link href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" rel="stylesheet">
+  </head>
+
+  <style>
+    .body_{
+      margin: 25px 3%;
+    }
+  </style>
+    
+  <body>
+    <!-- Navigation bar -->
+    <div class="top-bar">
+        <ul class="dropdown menu">
+            <li class="menu-text">Baking for SoftDev </li> 
+            <a href="https://www.foodnetwork.com/recipes/banana-bread-recipe-1969572"> Banana Bread </a>
+            <a href="https://www.foodnetwork.com/recipes/alton-brown/sugar-cookies-recipe-1914697"> Sugar Cookies </a>
+            <a href="https://www.foodnetwork.com/recipes/food-network-kitchen/classic-vanilla-cake-3362197"> Classic Vanilla Cake </a>
+        </ul>
+    </div>
+
+    <div class="body_">    
+      <p> Baking is very difficult for SoftDev students, so hopefully this webpage can help them out! </p>
+    
+      <!-- tab navigation. tabs are linked (href) to content through id -->
+      <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs"> 
+        <li class="tabs-title is-active"><a href="#panel1c" aria-selected="true"> Contents </a></li>
+        <li class="tabs-title"><a href="#panel2c"> Banana Bread </a></li>
+        <li class="tabs-title"><a href="#panel3c"> Sugar Cookies </a></li>
+        <li class="tabs-title"><a href="#panel4c"> Classic Vanilla Cake  </a></li>
+      </ul>
+
+      <div class="tabs-content" data-tabs-content="collapsing-tabs">
+        <div class="tabs-panel is-active" id="panel1c">
+          <p>
+            Here are some easy recipes you may want to try!<br>
+            <ul>
+              <li> Banana Bread </a></li>
+              <li> Sugar Cookies </a></li>
+              <li> Classic Vanilla Cake  </a></li>
+            </ul>
+          </p>
+        </div>
+        <div class="tabs-panel" id="panel2c">
+          <img src="https://c.tenor.com/Obrf_cJziQ8AAAAC/tenor.gif">
+        </div>
+        <div class="tabs-panel" id="panel3c">
+          <img src="https://pbs.twimg.com/media/BvBzkm3CQAIN_-3.jpg">
+        </div>
+        <div class="tabs-panel" id="panel4c">
+          <img src="https://media.gettyimages.com/id/1185552380/photo/scary-clown-mask.jpg?s=612x612&w=0&k=20&c=jugetaqVVoog-131Fzm34GeaXx6u2Nyastp8rLTIfuI=">
+        </div>
+      </div>
+
+      
+
+      </div> <!-- body_ -->
+
+      <!-- Imports JQuery and Foundation JS from CDN to enable scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+    <!--Necessary line to use CSS and scripts-->
+    <script>
+      $(document).foundation();
+    </script>
+    
+  </body>
+</html>
