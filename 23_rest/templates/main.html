@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 
+    TNPG
+    Naomi and Amanda
+    Novermber 20 2024
+-->
+<html>
+    <head>
+        <title> K23 </title>
+    </head>
+
+    <style>
+        html{
+            font-family:monospace;
+            padding: 2%;
+        }
+    </style>
+
+    <body>
+        <h1> NASA Astronomy Picture of the Day </h1>
+        <b> TNPG: Amanda and Naomi </b>
+
+        <!-- image procured via API call and explanations  -->
+        <h2> {{ title }} </h2>
+        <img src="{{ url }}" width="60%"><br><br>
+        <b> {{ date }} </b><br><br>
+        {{ explanation }}
+
+    </body>
+</html>
