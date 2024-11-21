@@ -21,8 +21,8 @@ def main():
    url = 'https://api.nasa.gov/planetary/apod?api_key='
    key = '5oi0NGdFzVgIvA23FdQS8YXx5OSInUPSOuhx88RC'
 
-   request = urllib.request.urlopen('https://api.nasa.gov/planetary/apod?api_key=5oi0NGdFzVgIvA23FdQS8YXx5OSInUPSOuhx88RC')
-   response = request.read() # converts to json 
+   request = urllib.request.urlopen(url + key)
+   response = request.read() # converts to json
    data = json.loads(response) # converts json string to dictionary
 
    date = data['date']
@@ -33,6 +33,5 @@ def main():
    return render_template('main.html', title = title, url = url, explanation = explanation, date = date)
 
 if __name__ == "__main__":
-   app.debug = True 
+   app.debug = True
    app.run()
-
