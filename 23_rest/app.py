@@ -1,4 +1,4 @@
-# Team: TNPG
+# Team: Oreo
 # Naomi and Amanda
 # November 20 2024
 
