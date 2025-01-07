@@ -1,0 +1,2 @@
+- red(), stripe() adds class to end if it doesn't exist already
+- s
