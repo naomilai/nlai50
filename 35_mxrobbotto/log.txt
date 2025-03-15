@@ -1,0 +1,15 @@
+DISCO:
+Copilot likes to make a lot of  files– some of them with only a few lines that could have been combined with others
+Copilot imported db from app to create data structures– in softdev, we used sql
+Its smart! It extends from a base html file to use the same navbar/components
+Lets do this next time!
+It wrote extra functionality we did not initially tell it to (accounting for editing other people’s blog posts)
+
+Q/C/C:
+Copilot may be good for understanding error messages, but not exactly writing code
+
+q0: We gave 11 prompts to copilot
+q1: Definitely had errors! We initially fed back the error messages, but later on we looked at the code and found the error ourselves. By pinpointing the error, copilot fixed itself better\
+q2: It looks like we both approached the problem similarly. Copilot initially did the skeleton of the project first (logging in and creating entries) before editing them. This was how our teams began the problem too. The biggest biggest difference was our file structure. Copilot gave us many files (explained in detail below), while our teams generally used few (up to 3) for the same functions. 
+
+
