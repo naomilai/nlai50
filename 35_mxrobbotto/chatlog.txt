@@ -1,0 +1,635 @@
+Copilot Chat
+Web log hosting site project structure and implementation
+Scenario Two: Your team has been contracted to create a web log hosting site, with the following features:
+
+    Users will have to register to use the site.
+    A logged-in user will be able to
+        Create a new blog
+        Update their blog by adding a new entry
+        View and edit their own past entries
+        View the blogs of other users
+
+Your "software solution," to use the parlance of our times, will incorporate a few distinct components, so it is imperative that your team develop a design before taking any further steps.
+
+Project Guidelines:
+
+    Flask will serve as your web server/delivery framework.
+    SQLite3 will serve as your backend data storage system.
+        As you grown your "sql-fu", always start with Devo Knowledge Base (QAF, n&c) and primary documentation. (...and if none of these have the answer you seek, and you find a SO post that is actually useful, or any other diamond in the rough of the Intertrash, add it to Devo KB)
+        Get creative, think boldly, get your hands dirty as you experiment via the sqlite3 shell and see what works/sticks...
+    Multiple Python files should be used, as necessary, for application layer. (a.k.a. "middleware" modules, etc.)
+
+    Reminder: include heading as comment in all source files.
+    Platinum Rule: THOUST APP SHALT NOT FAIL.
+
+Your website will incorporate a few distinct components, so it is imperative that your team develop a design and agree upon roles before you move to implementation.
+
+FINAL DELIVERABLES (watch this section for updates):
+
+    hardcopy:
+        final version of design doc (x1)
+        staple because it indicates "you have it together"
+    repo structure:
+
+app/
+    __init__.py
+    templates/
+README.md
+requirements.txt
+
+    requirements.txt
+        It will list flask as well as any other pip installs your app requires.
+        Latest version of all packages
+
+Here is a proposed project structure and initial files for your web log hosting site using Flask and SQLite3.
+Code
+
+app/
+    __init__.py
+    models.py
+    views.py
+    templates/
+        base.html
+        index.html
+        register.html
+        login.html
+        create_blog.html
+        edit_blog.html
+        view_blog.html
+README.md
+requirements.txt
+config.py
+
+Public code references from 1 repository
+
+File Contents
+app/__init__.py
+app/models.py
+Public code references from 10 repositories
+app/views.py
+Public code references from 25 repositories
+app/templates/base.html
+Public code references from 10 repositories
+app/templates/index.html
+Public code references from 18 repositories
+app/templates/register.html
+Public code references from 7 repositories
+app/templates/login.html
+Public code references from 11 repositories
+app/templates/create_blog.html
+Public code references from 7 repositories
+app/templates/edit_blog.html
+Public code references from 14 repositories
+app/templates/view_blog.html
+Public code references from 12 repositories
+README.md
+Public code references from 3 repositories
+requirements.txt
+name=requirements.txt
+
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Werkzeug
+
+config.py
+Public code references from 1 repository
+
+1 vulnerability detected
+
+This provides a basic structure and initial implementation. You can expand upon this by adding more features, improving the UI, and securing the application further.
+For the requirements.txt file, please use this as a reference so I can run my virtual environment on it to install necesssary packages:
+blinker==1.8.2
+click==8.1.7
+Flask==3.0.3
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+Werkzeug==3.0.4
+
+Sure, here is the requirements.txt file with the specified packages:
+name=requirements.txt
+
+blinker==1.8.2
+click==8.1.7
+Flask==3.0.3
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+Werkzeug==3.0.4
+Flask-SQLAlchemy
+Flask-Login
+
+This file includes the additional necessary packages for database handling and user authentication with Flask.
+This is the error I got when I ran your code:
+Traceback (most recent call last):
+  File "/home/students/odd/2025/igontchar50/Documents/SoftDev/SoftDev-Workshop/35_mxrobbotto/__init__.py", line 10, in <module>
+    app.config.from_object('config')
+  File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/config.py", line 254, in from_object
+    obj = import_string(obj)
+  File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/werkzeug/utils.py", line 596, in import_string
+    __import__(import_name)
+  File "/home/students/odd/2025/igontchar50/Documents/SoftDev/SoftDev-Workshop/35_mxrobbotto/config.py", line 11, in <module>
+    app.config.from_object(Config)
+NameError: name 'app' is not defined
+
+The error is occurring because the config.py file is trying to use app.config.from_object(Config) which should be done in the __init__.py file of the app directory, not in the config.py file itself.
+
+Here is the corrected config.py file and the __init__.py file:
+config.py
+1 vulnerability detected
+
+app/__init__.py
+
+Now, the config.py file defines the Config class without attempting to use app.config, and the __init__.py file applies the configuration to the Flask app instance. This should resolve the NameError.
+Here is the next mistake:
+Traceback (most recent call last):
+  File "/home/students/odd/2025/igontchar50/Documents/SoftDev/SoftDev-Workshop/35_mxrobbotto/app/__init__.py", line 21, in <module>
+    from app import views, models
+ModuleNotFoundError: No module named 'app'
+
+The error indicates that Python is unable to find the app module. This is likely because the script is being run in a way that does not correctly set up the module search path.
+
+To fix this issue, ensure that you are running the script from the correct directory, and that the app directory is in the Python path. One way to ensure this is to use the following structure and commands.
+Directory Structure
+Code
+
+project/
+    app/
+        __init__.py
+        models.py
+        views.py
+        templates/
+            base.html
+            index.html
+            register.html
+            login.html
+            create_blog.html
+            edit_blog.html
+            view_blog.html
+    config.py
+    README.md
+    requirements.txt
+    run.py
+
+run.py
+
+Create a run.py file at the root of your project to run the Flask application:
+Running the Application
+
+Run the application using this command from the root directory (project/):
+bash
+
+python run.py
+
+This setup ensures that the app module is correctly recognized. Here is the adjusted app/__init__.py file to match this structure:
+app/__init__.py
+
+This should resolve the ModuleNotFoundError.
+The flask app is running, but the following error message displays in the browser window:
+Exception
+
+Exception: Missing user_loader or request_loader. Refer to http://flask-login.readthedocs.io/#how-it-works for more info.
+Traceback (most recent call last)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 1498, in __call__
+
+    return self.wsgi_app(environ, start_response)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 1476, in wsgi_app
+
+    response = self.handle_exception(e)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+
+    response = self.full_dispatch_request()
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+
+    rv = self.handle_user_exception(e)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+
+    rv = self.dispatch_request()
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+
+    File "/home/students/odd/2025/igontchar50/Documents/SoftDev/SoftDev-Workshop/35_mxrobbotto/app/views.py", line 44, in login
+
+    return render_template('login.html')
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+
+    return _render(app, template, context)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/templating.py", line 127, in _render
+
+    app.update_template_context(context)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 493, in update_template_context
+
+    context.update(self.ensure_sync(func)())
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask_login/utils.py", line 405, in _user_context_processor
+
+    return dict(current_user=_get_user())
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask_login/utils.py", line 370, in _get_user
+
+    current_app.login_manager._load_user()
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask_login/login_manager.py", line 347, in _load_user
+
+    raise Exception(
+
+    Exception: Missing user_loader or request_loader. Refer to http://flask-login.readthedocs.io/#how-it-works for more info.
+
+The error indicates that Flask-Login requires a user loader function to load a user from the user ID stored in the session. This function should be registered with the LoginManager using the @login_manager.user_loader decorator.
+
+You need to define a user loader function in your app/__init__.py file. Here's how to do it:
+app/__init__.py
+
+This code snippet adds a user loader function that retrieves a user by their user ID. The @login_manager.user_loader decorator registers this function with the LoginManager.
+
+Now, Flask-Login will use this function to load the current user from the user ID stored in the session.
+
+After making this change, restart your Flask application, and the error should be resolved.
+Nice job! The login screen displays, but when we entered a username and password, the following error was displayed:
+OperationalError
+
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.password AS user_password
+FROM user
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('A', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+
+    self.dialect.do_execute(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+
+    cursor.execute(statement, parameters)
+
+    The above exception was the direct cause of the following exception:
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 1498, in __call__
+
+    return self.wsgi_app(environ, start_response)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 1476, in wsgi_app
+
+    response = self.handle_exception(e)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+
+    response = self.full_dispatch_request()
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+
+    rv = self.handle_user_exception(e)
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+
+    rv = self.dispatch_request()
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+
+    File "/home/students/odd/2025/igontchar50/Documents/SoftDev/SoftDev-Workshop/35_mxrobbotto/app/views.py", line 36, in login
+
+    user = User.query.filter_by(username=username).first()
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2759, in first
+
+    return self.limit(1)._iter().first()  # type: ignore
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2858, in _iter
+
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+
+    return self._execute_internal(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+
+    result = conn.execute(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+
+    return meth(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+
+    return connection._execute_clauseelement(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+
+    ret = self._execute_context(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+
+    return self._exec_single_context(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+
+    self._handle_dbapi_exception(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+
+    self.dialect.do_execute(
+
+    File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+
+    cursor.execute(statement, parameters)
+
+    sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+    [SQL: SELECT user.id AS user_id, user.username AS user_username, user.password AS user_password
+    FROM user
+    WHERE user.username = ?
+     LIMIT ? OFFSET ?]
+    [parameters: ('A', 1, 0)]
+    (Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+The error message indicates that the user table does not exist in the SQLite database. This likely means that the database and its tables have not been created.
+
+To create the database and its tables, you need to run the appropriate database migration commands. Here are the steps to do so:
+
+    Initialize Flask-Migrate: This will create the migration repository.
+
+    Generate an initial migration: This will generate a script to create the initial database schema.
+
+    Apply the migration: This will apply the migration and create the database tables.
+
+Step-by-Step Instructions
+
+    Install Flask-Migrate: Ensure that Flask-Migrate is included in your requirements.txt:
+    name=requirements.txt
+
+blinker==1.8.2
+click==8.1.7
+Flask==3.0.3
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+Werkzeug==3.0.4
+Flask-SQLAlchemy
+Flask-Login
+Flask-Migrate
+
+Update app/__init__.py: Add the necessary imports and initialize Flask-Migrate:
+
+Initialize the migration repository: Run the following command in your terminal:
+sh
+
+flask db init
+
+Generate the initial migration: Run the following command in your terminal:
+sh
+
+flask db migrate -m "Initial migration."
+
+Apply the migration: Run the following command in your terminal:
+sh
+
+    flask db upgrade
+
+These steps will create the necessary database tables. After completing them, restart your Flask application and try logging in again. This should resolve the no such table: user error.
+Can you fix the error without using Flask-migrate, just using basic SQL and Flask modules?
+
+Sure! You can set up the database schema using basic SQL commands and Flask's SQLAlchemy directly. Here are the steps:
+
+    Create the database tables manually: You can create the database tables by running a Python script that initializes the database and creates the necessary tables.
+
+    Add the script to create the tables: Create a new script, create_tables.py, at the root of your project to initialize the database and create the tables.
+
+Directory Structure
+Code
+
+project/
+    app/
+        __init__.py
+        models.py
+        views.py
+        templates/
+            base.html
+            index.html
+            register.html
+            login.html
+            create_blog.html
+            edit_blog.html
+            view_blog.html
+    config.py
+    README.md
+    requirements.txt
+    run.py
+    create_tables.py
+
+create_tables.py
+1 vulnerability detected
+
+Running the Script
+
+Run the script to create the database tables:
+bash
+
+python create_tables.py
+
+Updated app/models.py
+
+Ensure that your models file (app/models.py) contains the necessary table definitions:
+Public code references from 1 repository
+
+Updated run.py
+
+Ensure your run.py file is correctly set up to run the Flask application:
+Updated requirements.txt
+
+Ensure your requirements.txt file includes the necessary packages:
+name=requirements.txt
+
+blinker==1.8.2
+click==8.1.7
+Flask==3.0.3
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+Werkzeug==3.0.4
+Flask-SQLAlchemy
+Flask-Login
+
+By running the create_tables.py script, you will set up the database and create the necessary tables manually without using Flask-Migrate. Then, you can run your Flask application as usual.
+Now, the first page is also displaying an error that blogs table does not exist, and it seems to be a similar issue with Entry:
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: blog
+[SQL: SELECT blog.id AS blog_id, blog.title AS blog_title, blog.user_id AS blog_user_id
+FROM blog]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+It appears that the blog and entry tables also need to be created in the database. You can update the create_tables.py script to include the creation of these tables as well.
+
+Here's the updated create_tables.py script to create all necessary tables:
+1 vulnerability detected
+
+To ensure all tables are created, make sure the models.py file is correct and includes the necessary imports and table definitions:
+Public code references from 1 repository
+
+Running the Script
+
+Run the script to create the database tables:
+bash
+
+python create_tables.py
+
+This will create the user, blog, and entry tables in your SQLite database.
+
+After running the script, restart your Flask application and try accessing the pages again. This should resolve the no such table errors for the blog and entry tables.
+Here is the error we recieve when we run python create_tables.py:
+Traceback (most recent call last):
+  File "/home/students/odd/2025/igontchar50/Documents/SoftDev/SoftDev-Workshop/35_mxrobbotto/create_tables.py", line 5, in <module>
+    db.create_all()
+  File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 871, in _call_for_binds
+    engine = self.engines[key]
+  File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 687, in engines
+    app = current_app._get_current_object()  # type: ignore[attr-defined]
+  File "/home/students/odd/2025/igontchar50/.local/lib/python3.10/site-packages/werkzeug/local.py", line 519, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+
+The error you're encountering is due to attempting to use Flask-SQLAlchemy functionality outside of an application context. This can be resolved by pushing an application context before running db.create_all().
+
+Here's how you can modify create_tables.py to fix this issue:
+Running the Script
+
+Run the script to create the database tables:
+bash
+
+python create_tables.py
+
+This modification ensures that the database tables are created within the application context, resolving the RuntimeError. After running the script, restart your Flask application and try accessing the pages again. This should resolve the no such table errors for the user, blog, and entry tables.
+We removed the method="sha256" in line 20 of views.py becuase it was generating an error, but now it works REALLY WELL!
+When a user creates a blog, can there be text field inside that they can write in and edit?
+Can you add a functionality so that when a user is logged in, they can edit their previous blog posts?
+2/2
+2/2
+
+Sure! To add the functionality for users to write and edit their blog entries, you need to update the views and templates accordingly.
+
+Here are the steps to achieve this:
+
+    Create a route and template for adding entries to a blog.
+    Create a route and template for editing entries.
+    Update the views and templates for viewing blogs to include the entries.
+
+Step 1: Create Routes and Templates for Adding Entries
+app/views.py
+
+Add routes for creating and editing entries:
+Step 2: Create Templates for Adding and Editing Entries
+app/templates/add_entry.html
+app/templates/edit_entry.html
+Step 3: Update Templates for Viewing Blogs to Include Entries
+app/templates/view_blog.html
+Final Directory Structure
+Code
+
+project/
+    app/
+        __init__.py
+        models.py
+        views.py
+        templates/
+            base.html
+            index.html
+            register.html
+            login.html
+            create_blog.html
+            edit_blog.html
+            view_blog.html
+            add_entry.html
+            edit_entry.html
+    config.py
+    README.md
+    requirements.txt
+    run.py
+    create_tables.py
+
+Running the Application
+
+After making these changes, run your Flask application:
+bash
+
+python run.py
+
+With these changes, users will be able to add and edit entries in their blogs. The add_entry and edit_entry routes handle the creation and editing of entries, and the templates provide the necessary forms and links for these actions.
+When we tried to register an account with the same username and password as an existing one, we got the following error:
+IntegrityError
+
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: INSERT INTO user (username, password) VALUES (?, ?)]
+[parameters: ('A', 'scrypt:32768:8:1$8PewkeXZqBtXsXMi$7eae32195a72993d81b65ebd285a406e891ea2b0124a7af9dc008d040afdf22f62f6fb97304818a365cfb2995aedb6c33a87d14c62a2fc81f050bc30a77c9777')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+
+Can you provision for this please?
+
+To handle the IntegrityError when a user tries to register with an existing username, we need to add a check before attempting to insert the new user into the database. If the username already exists, we should flash an error message and redirect the user back to the registration page.
+
+Here is the updated register view to handle this situation:
+app/views.py
+Public code references from 3 repositories
+Explanation
+
+    Check for Existing Username: Before creating a new user, we query the database to check if a user with the same username already exists. If an existing user is found, we flash an error message and redirect back to the registration page.
+
+    Handle IntegrityError: While inserting the new user, we handle any IntegrityError that might occur by rolling back the session and flashing an error message.
+
+These changes will ensure that the application gracefully handles attempts to register with an already existing username.
+Updated Directory Structure:
+Code
+
+project/
+    app/
+        __init__.py
+        models.py
+        views.py
+        templates/
+            base.html
+            index.html
+            register.html
+            login.html
+            create_blog.html
+            edit_blog.html
+            view_blog.html
+            add_entry.html
+            edit_entry.html
+    config.py
+    README.md
+    requirements.txt
+    run.py
+    create_tables.py
+
+Public code references from 1 repository
+
+With these changes, users will receive a proper error message if they try to register with a username that already exists.
+
+To handle the IntegrityError when a user tries to register with an existing username, we need to add a check before attempting to insert the new user into the database. If the username already exists, we should flash an error message and redirect the user back to the registration page. Here is the updated register view to handle this situation: app/views.py app/views.py v3 @app.route('/register', methods=['GET', 'POST']) def register(): if request.method == 'POST': username = request.form['username'] password = request.form['password'] Public code references from 3 repositories Explanation Check for Existing Username: Before creating a new user, we query the database to check if a user with the same username already exists. If an existing user is found, we flash an error message and redirect back to the registration page. Handle IntegrityError: While inserting the new user, we handle any IntegrityError that might occur by rolling back the session and flashing an error message. These changes will ensure that the application gracefully handles attempts to register with an already existing username. Updated Directory Structure: Code project/ app/ __init__.py models.py views.py templates/ base.html index.html register.html login.html create_blog.html edit_blog.html view_blog.html add_entry.html edit_entry.html config.py README.md requirements.txt run.py create_tables.py Public code references from 1 repository With these changes, users will receive a proper error message if they try to register with a username that already exists.

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ blog.title }}</h2>
+{% for entry in entries %}
+    <div class="blog-entry">
+        <p>{{ entry.timestamp }}</p>
+        <p>{{ entry.content }}</p>
+        {% if current_user.is_authenticated and blog.user_id == current_user.id %}
+            <a href="{{ url_for('edit_entry', entry_id=entry.id) }}">Edit</a>
+        {% endif %}
+    </div>
+{% endfor %}
+{% if current_user.is_authenticated and blog.user_id == current_user.id %}
+    <a href="{{ url_for('add_entry', blog_id=blog.id) }}">Add Entry</a>
+{% endif %}
+{% endblock %}

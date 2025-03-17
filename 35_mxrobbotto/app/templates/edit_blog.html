@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Edit Blog</h2>
+<form method="POST">
+    <label for="title">Blog Title</label>
+    <input type="text" name="title" id="title" value="{{ blog.title }}" required>
+
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
