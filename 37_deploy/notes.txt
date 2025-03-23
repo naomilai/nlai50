@@ -1,0 +1,15 @@
+notes
+
+1. set up app and wsgi entry point in same directory
+	a. wsgi entry point -> connection between web serve and python
+	b. connect (?) by calling from directory
+2. ini -> long-term configuration for uwsgi
+3. (systemd unit file) service -> manage system services
+	a. within a weird looking directory? (/etc/systemd/system/myproject.servce)
+4. make sure everything is in the same directory!
+	a. do we need to work around this if the virtual environment is s omewhere else?
+
+	b. how would the executable part work
+5. start uwsgi -> enable at boot -> check status
+	a. what is the daemon thing to refresh
+6. crete location block (nginx), link file to sites enabled
